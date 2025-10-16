@@ -1,0 +1,97 @@
+<!--
+ Os jovens precisam escrever o que foi ditado pelo professor. "Vamos  criar um site..."
+ 
+ 
+ -->
+
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igor Light Buld</title>
+    <style>
+
+        :root{
+            --eu-igor:blue;
+            --enzo:red;
+            --ari:rgb(173, 219, 22);
+        }
+
+        *{
+            /* Reset da pagina */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--ari);
+
+        }
+
+        body{
+            background: var(--enzo);
+            background-image: linear-gradient(to top, var(--eu-igor), var(--enzo));
+            background-attachment: fixed;
+
+        }
+        header,
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        button{
+            width: 80px;
+        }
+        
+    </style>
+  
+    
+</head>
+<body>
+
+    <header>
+
+        <h1>
+            Lâmpada
+        </h1>
+    </header>
+
+    <section>
+        <div>
+            <img src="" alt="Lâmpada OFF"  id="lamp">
+        </div>
+
+
+        <div>
+            <button id="turnOn">Ligar</button>
+            <button id="turnOff">Desligar</button>
+        </div>
+    </section>
+   
+
+
+</body>
+
+<script>
+
+    const turnOn = document.getElementById('turnOn');
+    const turnOff = document.getElementById('turnOff');
+    const lamp = document.getElementById('lamp');
+
+function isLampBroken(){
+
+
+    
+}
+
+
+
+
+     
+
+
+</script>
+
+ 
+</html>
