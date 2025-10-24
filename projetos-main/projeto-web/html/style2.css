@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #353535;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > h1 {
+    color: whitesmoke;
+    font-size: 1.8em;
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav {
+    background-color: #a59a98;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Estilo dos links */
+nav a {
+    color: #e8d826;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 2px solid #e8d826;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+    background-color: #e8d826;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Página ativa (exemplo) */
+nav a.ativo {
+    background-color: #e8d826;
+    color: #000;
+    box-shadow: 0 0 10px #e8d82680;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    background-color: #696563;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 17px;
+    box-shadow: 2px 2px 8px #b1b1ad;
+}
+
+main > h2 {
+    color: whitesmoke;
+    margin-bottom: 10px;
+}
+
+/* RODAPÉ */
+footer {
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    nav a {
+        margin-top: 5px;
+    }
+}
+ul {
+  margin: 0; /* remove margem padrão */
+  padding-left: 0; /* ou padding-inline-start: 0; para compatibilidade internacional */  
+  text-align: left; /* garante que os itens fiquem alinhados à esquerda */
+  list-style-position: inside;
+}
