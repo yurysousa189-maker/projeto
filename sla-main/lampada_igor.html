@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Compra</title>
+    <style>
+        body { font-family: Arial; background: #f5f5f5; margin:0; }
+        .container { width: 90%; margin: auto; background: white; padding: 20px; margin-top: 20px; border-radius: 10px; }
+        input, select { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: black; color: white; padding: 10px 20px; border: none; margin-top: 20px; cursor: pointer; width: 100%; border-radius: 5px; }
+        #pixArea { display:none; text-align:center; margin-top:20px; }
+        #pixArea img { width:200px; }
+        #cartaoArea { display:none; }
+        #boletoArea { display:none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Finalização da Compra</h2>
+
+    <h3>Produtos:</h3>
+    <ul id="lista-produtos"></ul>
+    <h3>Total: R$ <span id="total"></span></h3>
+
+    <hr>
+
+    <h3>Dados do Cliente</h3>
+
+    <input type="text" id="nome" placeholder="Nome Completo" required>
+    <input type="text" id="endereco" placeholder="Endereço Completo" required>
+    <input type="text" id="cpf" placeholder="CPF" required>
+
+    <h3>Método de Pagamento</h3>
+    <select id="pagamento" onchange="mostrarMetodo()">
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="pix">PIX</option>
+        <option value="boleto">Boleto</option>
+    </select>
+
+    <!-- CARTÃO -->
+    <div id="cartaoArea">
+        <input type="text" placeholder="Número do Cartão">
+        <input type="text" placeholder="Nome no Cartão">
+        <input type="text" placeholder="Validade (MM/AA)">
+        <input type="text" placeholder="CVV">
+    </div>
+
+    <!-- PIX -->
+    <div id="pixArea">
+        <h3>Pague com PIX</h3>
+        <p>Escaneie o QR Code abaixo:</p>
+        <img id="pixQR" src="" alt="QR Code PIX">
+        <button onclick="confirmarPIX()">Já realizei o pagamento</button>
+    </div>
+
+    <!-- BOLETO -->
+    <div id="boletoArea">
+        <h3>Boleto Bancário</h3>
+        <p>Linha digitável:</p>
+        <input type="text" value="34191.79001 01043.510047 91020.150008 9 12345678900000">
+    </div>
+
+    <button onclick="confirmar()">Confirmar Pedido</button>
+</div>
+
+<script>
+    // ---------- CARREGAR PRODUTOS ----------
+    const produtos = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const total = localStorage.getItem("total") || "0.00";
+
+    const lista = document.getElementById("lista-produtos");
+    produtos.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+        lista.appendChild(li);
+    });
+
+    document.getElementById("total").textContent = total;
+
+    // ---------- MÉTODOS DE PAGAMENTO ----------
+    function mostrarMetodo() {
+        let pag = document.getElementById("pagamento").value;
+
+        document.getElementById("cartaoArea").style.display = pag === "cartao" ? "block" : "none";
+        document.getElementById("pixArea").style.display = pag === "pix" ? "block" : "none";
+        document.getElementById("boletoArea").style.display = pag === "boleto" ? "block" : "none";
+
+        if (pag === "pix") gerarPIX();
+    }
+
+    // ---------- GERAR QR CODE PIX ----------
+    function gerarPIX() {
+        const valor = total.replace(",", ".");
+        const textoPix = `00020101021126580014BR.GOV.BCB.PIX0136chave-pix-exemplo@dominio.com520400005303986540${valor}5802BR5915Cliente Teste6009Sao Paulo62070503***6304ABCD`;
+
+        const url = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(textoPix);
+        document.getElementById("pixQR").src = url;
+    }
+
+    function confirmarPIX() {
+        alert("Pagamento via PIX confirmado! ✔");
+    }
+
+    // ---------- FINALIZAR ----------
+    function confirmar() {
+        const nome = document.getElementById("nome").value;
+        const endereco = document.getElementById("endereco").value;
+        const cpf = document.getElementById("cpf").value;
+
+        if (nome === "" || endereco === "" || cpf === "") {
+            alert("Preencha todos os dados!");
+            return;
+        }
+
+        alert("Pedido Confirmado! Obrigado pela compra 🚀");
+
+        localStorage.clear();
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
