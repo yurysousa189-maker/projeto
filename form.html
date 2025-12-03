@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Passarella</title>
+  <style>
+    /* ---------- ESTILO GERAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0c0c0c, #1a1a1a);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #a855f7;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #ccc;
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #121212;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+    }
+
+    /* ---------- SOBRE ---------- */
+    .sobre {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .sobre img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px;
+      border: 3px solid #a855f7;
+    }
+
+    .sobre div {
+      max-width: 500px;
+      margin: 20px;
+    }
+
+    .sobre h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #a855f7;
+    }
+
+    .sobre p {
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    /* ---------- PROJETOS ---------- */
+    .projetos {
+      text-align: center;
+    }
+
+    .projetos h2 {
+      color: #a855f7;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .projetos img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin: 15px 0;
+      border: 2px solid #a855f7;
+    }
+
+    /* ---------- FORMULÁRIO DE CONTATO ---------- */
+    .form-contato {
+      text-align: left;
+      color: #fff;
+    }
+
+    .form-contato h2 {
+      text-align: center;
+      color: #a855f7;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .form-contato label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-contato input, 
+    .form-contato textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #555;
+      border-radius: 6px;
+      background-color: #1f1f1f;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    .form-contato textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .linha {
+      display: flex;
+      gap: 10px;
+    }
+
+    .linha input {
+      flex: 1;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .botoes button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .btn-limpar {
+      background-color: #6c757d;
+    }
+
+    .btn-enviar {
+      background-color: #a855f7;
+    }
+
+    .btn-enviar:hover {
+      background-color: #8b34e0;
+    }
+
+    /* ---------- RODAPÉ ---------- */
+    footer {
+      text-align: center;
+      color: #777;
+      margin: 40px 0 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .sobre {
+        flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Portfólio Passarella</h1>
+    <p>Transformando ideias em projetos com propósito e dedicação.</p>
+  </header>
+
+  <section class="sobre">
+    <img src="/img/eu.png" alt="Foto de Passarella">
+    <div>
+      <h2>Sobre Mim</h2>
+      <p>
+        Olá! Sou Passarella, um entusiasta de tecnologia e desenvolvimento web em constante evolução. 
+        Meu ikigai é dar orgulho à minha família, alcançar uma carreira sólida com um salário acima de 10 mil reais e conquistar o sonho de morar fora do país.  
+        Tenho como soft skill principal a <strong>comunicação</strong> — consigo me conectar facilmente com pessoas e trabalhar bem em grupo.  
+        Atualmente, estou aprimorando minhas hard skills em <strong>web design</strong> e me preparando para seguir o caminho da <strong>engenharia de software</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="projetos">
+    <h2>Meus Projetos</h2>
+
+    <img src="/img/dark.png" alt="Projeto modo escuro e claro">
+    <p>Projeto de alternância de tema claro/escuro, com design elegante e funcionalidade fluida.</p>
+
+    <img src="/img/luz.png" alt="Projeto Lâmpada acesa">
+    <img src="/img/off.png" alt="Projeto Lâmpada apagada">
+    <img src="/img/quebrado.png" alt="Projeto Lâmpada quebrada">
+    <p>Simulação interativa de uma lâmpada que liga, desliga e quebra — explorando lógica JavaScript e manipulação de DOM.</p>
+
+    <img src="/img/off.png" alt="Projeto HTML inicial">
+    <p>Primeiros passos com HTML e estruturação semântica de páginas web.</p>
+  </section>
+
+  <!-- FORMULÁRIO DE CONTATO -->
+  <section class="form-contato">
+    <h2>Envie a sua Mensagem</h2>
+    <form id="contactForm">
+      <label for="nome">Nome Completo</label>
+      <input id="nome" type="text" placeholder="Insira o seu nome" required>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Insira o seu email" required>
+
+      <div class="linha">
+        <div>
+          <label for="telefone">Telefone</label>
+          <input id="telefone" type="text" placeholder="(XX) XXXX-XXXX">
+        </div>
+        <div>
+          <label for="telemovel">Telemóvel</label>
+          <input id="telemovel" type="text" placeholder="(XX) 9XXXX-XXXX">
+        </div>
+      </div>
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" placeholder="Escreva a sua mensagem..."></textarea>
+
+      <div class="botoes">
+        <button type="reset" class="btn-limpar">Limpar</button>
+        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Portfólio Passarella — Desenvolvido com paixão e propósito.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso! (Simulação)');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
